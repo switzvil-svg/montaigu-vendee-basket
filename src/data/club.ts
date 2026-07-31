@@ -10,6 +10,16 @@
  * fournie par le club.
  */
 import photoPlaceholder from "@/assets/photo-placeholder.jpg";
+import flavienForre from "@/assets/players/flavien-forre.jpg";
+import issaFofana from "@/assets/players/issa-fofana.jpg";
+import jonasMarieFrancoise from "@/assets/players/jonas-marie-francoise.jpg";
+import julienLeclerc from "@/assets/players/julien-leclerc.jpg";
+import juniorTshunza from "@/assets/players/junior-tshunza.jpg";
+import justinJouet from "@/assets/players/justin-jouet.jpg";
+import robinLeSter from "@/assets/players/robin-le-ster.jpg";
+import romainBrachet from "@/assets/players/romain-brachet.jpg";
+import theoPallard from "@/assets/players/theo-pallard.jpg";
+import valentinJolbit from "@/assets/players/valentin-jolbit.jpg";
 
 export const images = {
   heroPlayer: photoPlaceholder,
@@ -175,7 +185,28 @@ export type Player = {
  * écrire "En attente d'informations" plutôt que de fabriquer une donnée
  * (voir `officials`/`staff` plus bas pour l'exemple de ce pattern).
  */
-export const players: Player[] = [];
+export const players: Player[] = [
+  { slug: "justin-jouet", firstName: "Justin", lastName: "Jouet", photo: justinJouet, number: 4 },
+  {
+    slug: "jonas-marie-francoise",
+    firstName: "Jonas",
+    lastName: "Marie-Francoise",
+    photo: jonasMarieFrancoise,
+    number: 6,
+  },
+  { slug: "julien-leclerc", firstName: "Julien", lastName: "Leclerc", photo: julienLeclerc, number: 7 },
+  { slug: "theo-pallard", firstName: "Théo", lastName: "Pallard", photo: theoPallard, number: 8 },
+  { slug: "flavien-forre", firstName: "Flavien", lastName: "Forre", photo: flavienForre, number: 9 },
+  { slug: "romain-brachet", firstName: "Romain", lastName: "Brachet", photo: romainBrachet, number: 10 },
+  { slug: "robin-le-ster", firstName: "Robin", lastName: "Le Ster", photo: robinLeSter, number: 12 },
+  { slug: "junior-tshunza", firstName: "Junior", lastName: "Tshunza", photo: juniorTshunza, number: 14 },
+  // TODO : numéro de maillot illisible sur la photo fournie (prise de dos, recadrée) — à renseigner.
+  { slug: "valentin-jolbit", firstName: "Valentin", lastName: "Jolbit", photo: valentinJolbit },
+  // TODO : photo fournie montre ce joueur dans un maillot d'un autre club (Chalans) et non MVBC —
+  // à vérifier auprès du club avant publication (mauvaise photo ? ancien club ?). Le numéro 15 vu
+  // sur cette photo n'est donc pas forcément son numéro à Montaigu Vendée.
+  { slug: "issa-fofana", firstName: "Issa", lastName: "Fofana", photo: issaFofana },
+].map((p) => ({ ...p, team: "Senior M1" }));
 
 /* ------------------------------------------------------------------ results */
 
