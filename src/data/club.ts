@@ -200,11 +200,8 @@ export const players: Player[] = [
   { slug: "romain-brachet", firstName: "Romain", lastName: "Brachet", photo: romainBrachet, number: 10 },
   { slug: "robin-le-ster", firstName: "Robin", lastName: "Le Ster", photo: robinLeSter, number: 12 },
   { slug: "junior-tshunza", firstName: "Junior", lastName: "Tshunza", photo: juniorTshunza, number: 14 },
-  // TODO : numéro de maillot illisible sur la photo fournie (prise de dos, recadrée) — à renseigner.
-  { slug: "valentin-jolbit", firstName: "Valentin", lastName: "Jolbit", photo: valentinJolbit },
-  // TODO : photo fournie montre ce joueur dans un maillot d'un autre club (Chalans) et non MVBC —
-  // à vérifier auprès du club avant publication (mauvaise photo ? ancien club ?). Le numéro 15 vu
-  // sur cette photo n'est donc pas forcément son numéro à Montaigu Vendée.
+  { slug: "valentin-jolbit", firstName: "Valentin", lastName: "Jolbit", photo: valentinJolbit, number: 11 },
+  // Photo provisoire (maillot d'un autre club visible) en attendant une photo MVBC.
   { slug: "issa-fofana", firstName: "Issa", lastName: "Fofana", photo: issaFofana },
 ].map((p) => ({ ...p, team: "Senior M1" }));
 
