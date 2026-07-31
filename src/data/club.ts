@@ -435,8 +435,65 @@ export type Partner = {
   logo?: string;
 };
 
-/** TODO : vrais sponsors du club, avec leur logo réel (voir TEMPLATE.md). */
-export const partners: Partner[] = [];
+/**
+ * TODO : niveaux (Or/Argent/Bronze) tous mis par défaut en "Bronze" — à
+ * confirmer avec le club, aucune info de niveau visible sur la capture
+ * fournie. Logos réels à ajouter quand les fichiers seront fournis (voir
+ * TEMPLATE.md). Une quinzaine de partenaires de la capture, illisibles à
+ * cette résolution, ont été volontairement omis plutôt que de risquer une
+ * erreur sur le nom d'une vraie entreprise.
+ */
+export const partners: Partner[] = [
+  { name: "Vendée — Le Département", tier: "Bronze", sector: "Collectivité" },
+  { name: "Montaigu Vendée", tier: "Bronze", sector: "Collectivité" },
+  { name: "Terres de Montaigu", tier: "Bronze", sector: "Collectivité" },
+  { name: "Fondation Sodebo", tier: "Bronze", sector: "Fondation d'entreprise" },
+  { name: "GO! J'imprime Ton Style", tier: "Bronze", sector: "Imprimerie" },
+  { name: "Duret", tier: "Bronze", sector: "Immobilier" },
+  { name: "Super U Pays de Montaigu", tier: "Bronze", sector: "Grande distribution" },
+  { name: "Crédit Mutuel Océan", tier: "Bronze", sector: "Banque" },
+  { name: "Barreau & Fils", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "Maison de la Presse", tier: "Bronze", sector: "Presse" },
+  { name: "MB Menuiserie Bouteau", tier: "Bronze", sector: "Menuiserie" },
+  { name: "Fleurs Ange", tier: "Bronze", sector: "Fleuriste" },
+  { name: "E.Leclerc", tier: "Bronze", sector: "Grande distribution" },
+  { name: "RT3", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "7 Envies de Pain", tier: "Bronze", sector: "Boulangerie" },
+  { name: "Moinard", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "Apollo", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "Eric Mocquet", tier: "Bronze", sector: "Artisan" },
+  { name: "L.L.A. Le Loulay Auto", tier: "Bronze", sector: "Automobile" },
+  { name: "C3P", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "Une Envie de Pizza", tier: "Bronze", sector: "Restauration" },
+  { name: "VST", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "VEB", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "Symbiose Expertise Comptable", tier: "Bronze", sector: "Expertise comptable" },
+  { name: "Star Trucks — Renault Trucks", tier: "Bronze", sector: "Automobile" },
+  { name: "Diagonal", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "RoTok", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "Clara Automobile", tier: "Bronze", sector: "Automobile" },
+  { name: "Biocoop", tier: "Bronze", sector: "Alimentation bio" },
+  { name: "CBH Habitat", tier: "Bronze", sector: "Maître d'œuvre" },
+  { name: "ATP Immobilier", tier: "Bronze", sector: "Immobilier" },
+  { name: "INDCAR", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "Vous Faciliter l'IT", tier: "Bronze", sector: "Informatique" },
+  { name: "Burologic", tier: "Bronze", sector: "Bureautique" },
+  { name: "Maison Eveillard", tier: "Bronze", sector: "Boulangerie-pâtisserie" },
+  { name: "Cyril Éclair", tier: "Bronze", sector: "Boulangerie-pâtisserie" },
+  { name: "Heppner", tier: "Bronze", sector: "Transport-logistique" },
+  { name: "Square", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "Le Conservateur", tier: "Bronze", sector: "Assurance / patrimoine" },
+  { name: "Strapharm", tier: "Bronze", sector: "Pharmacie" },
+  { name: "Nat Evasion", tier: "Bronze", sector: "Voyages" },
+  { name: "Envolis", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "IDM Menuiserie", tier: "Bronze", sector: "Menuiserie" },
+  { name: "Café Le Score", tier: "Bronze", sector: "Bar-tabac" },
+  { name: "Agtim", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "Arrivé", tier: "Bronze", sector: "Peintre-décorateur" },
+  { name: "Briogel", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "Calipage", tier: "Bronze", sector: "Entreprise locale" },
+  { name: "SEV Enseignes", tier: "Bronze", sector: "Enseignes-signalétique" },
+];
 
 /** TODO : vraies institutions partenaires (mairie, comité, ligue, FFBB…). */
 export const institutions: string[] = [];
