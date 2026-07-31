@@ -67,24 +67,42 @@ export type Match = {
   score?: { vbc: number; opponent: number };
 };
 
-/**
- * TODO : remplacer cette entrée d'exemple par le vrai calendrier du club
- * (un objet par match, aller-retour). Ne jamais inventer un adversaire, une
- * date ou un score réel — cette entrée est un simple exemple de forme.
- */
+/** Calendrier réel de la saison 2026-2027, Senior M1 (Nationale Masculine 2). */
 export const seniorM1Matches: Match[] = [
-  {
-    id: "m1-01",
-    team: "Senior M1",
-    competition: "[Championnat à renseigner]",
-    round: "Aller",
-    opponent: "Adversaire à définir",
-    opponentShort: "TBD",
-    home: true,
-    venue: club.venue,
-    date: "2026-09-05T20:00:00",
-  },
-];
+  { opponent: "Beyssac Beaupuy Marmande -3", opponentShort: "BBM -3", home: true, date: "2026-09-05T20:00:00" },
+  { opponent: "ESMS Basket 40", opponentShort: "ESMS 40", home: false, date: "2026-09-12T20:00:00" },
+  { opponent: "Nantes Basket Hermine (NBH) -3", opponentShort: "NBH -3", home: true, date: "2026-09-19T20:00:00" },
+  { opponent: "Amicale Sportive Niortaise", opponentShort: "AS Niortaise", home: false, date: "2026-09-26T20:00:00" },
+  { opponent: "Pornic Basket St Michel", opponentShort: "Pornic", home: true, date: "2026-10-03T20:00:00" },
+  { opponent: "IE - TOAC Basket - Espoir", opponentShort: "TOAC Espoir", home: false, date: "2026-10-10T20:00:00" },
+  { opponent: "Saint Médard Basket", opponentShort: "St Médard", home: true, date: "2026-10-17T20:00:00" },
+  { opponent: "Avenir Serreslousiens Colombins", opponentShort: "Serreslousiens", home: false, date: "2026-10-31T20:00:00" },
+  { opponent: "Challans Riez Vie", opponentShort: "Challans", home: true, date: "2026-11-07T20:00:00" },
+  { opponent: "Rezé Basket 44 - 2", opponentShort: "Rezé 44-2", home: false, date: "2026-11-14T20:00:00" },
+  { opponent: "Garonne Avenir Basket du Marmand", opponentShort: "Garonne Avenir", home: true, date: "2026-11-28T20:00:00" },
+  { opponent: "Brissac Aubance Basket - 2", opponentShort: "Brissac -2", home: false, date: "2026-12-05T20:00:00" },
+  { opponent: "Adour Dax Landes Basket", opponentShort: "Adour Dax", home: false, date: "2026-12-12T20:00:00" },
+  { opponent: "Beyssac Beaupuy Marmande -3", opponentShort: "BBM -3", home: false, date: "2027-01-02T20:00:00" },
+  { opponent: "ESMS Basket 40", opponentShort: "ESMS 40", home: true, date: "2027-01-09T20:00:00" },
+  { opponent: "Nantes Basket Hermine (NBH) -3", opponentShort: "NBH -3", home: false, date: "2027-01-16T20:00:00" },
+  { opponent: "Amicale Sportive Niortaise", opponentShort: "AS Niortaise", home: true, date: "2027-01-30T20:00:00" },
+  { opponent: "Pornic Basket St Michel", opponentShort: "Pornic", home: false, date: "2027-02-06T20:00:00" },
+  { opponent: "IE - TOAC Basket - Espoir", opponentShort: "TOAC Espoir", home: true, date: "2027-02-13T20:00:00" },
+  { opponent: "Saint Médard Basket", opponentShort: "St Médard", home: false, date: "2027-02-27T20:00:00" },
+  { opponent: "Avenir Serreslousiens Colombins", opponentShort: "Serreslousiens", home: true, date: "2027-03-06T20:00:00" },
+  { opponent: "Challans Riez Vie", opponentShort: "Challans", home: false, date: "2027-03-13T20:00:00" },
+  { opponent: "Rezé Basket 44 - 2", opponentShort: "Rezé 44-2", home: true, date: "2027-03-27T20:00:00" },
+  { opponent: "Garonne Avenir Basket du Marmand", opponentShort: "Garonne Avenir", home: false, date: "2027-04-03T20:00:00" },
+  { opponent: "Brissac Aubance Basket - 2", opponentShort: "Brissac -2", home: true, date: "2027-04-17T20:00:00" },
+  { opponent: "Adour Dax Landes Basket", opponentShort: "Adour Dax", home: true, date: "2027-05-01T20:00:00" },
+].map((m, i) => ({
+  id: `m1-${String(i + 1).padStart(2, "0")}`,
+  team: "Senior M1" as const,
+  competition: "Nationale Masculine 2",
+  round: i < 13 ? "Aller" : "Retour",
+  venue: m.home ? club.venue : "Extérieur",
+  ...m,
+}));
 
 export const nextMatch: Match =
   seniorM1Matches.find((m) => m.home && new Date(m.date) > new Date()) ?? seniorM1Matches[0];
