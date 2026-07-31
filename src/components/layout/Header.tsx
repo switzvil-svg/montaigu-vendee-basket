@@ -32,7 +32,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-card">
       <div className="container-vbc grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 lg:grid-cols-[auto_1fr_auto]">
         <Link
           to="/"
@@ -58,7 +58,7 @@ export function Header() {
                   <ChevronDown size={14} aria-hidden />
                 </Link>
                 <div className="invisible absolute top-full left-1/2 z-10 -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                  <ul className="min-w-52 rounded-[10px] border border-border bg-background p-2 shadow-[var(--shadow-card-hover)]">
+                  <ul className="min-w-52 rounded-[10px] border border-border bg-card p-2 shadow-[var(--shadow-card-hover)]">
                     {item.children.map((child) => (
                       <li key={child.to}>
                         <Link
@@ -104,7 +104,7 @@ export function Header() {
 
       {open ? (
         <nav
-          className="border-t border-border bg-background lg:hidden"
+          className="border-t border-border bg-card lg:hidden"
           aria-label="Navigation mobile"
         >
           <ul className="container-vbc py-4">

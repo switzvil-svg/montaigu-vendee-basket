@@ -28,7 +28,7 @@ export const Route = createFileRoute("/resultats")({
 /** Section "classement à venir" pour une catégorie dont la poule n'est pas encore renseignée. */
 function ClassementAVenir() {
   return (
-    <p className="rounded-[10px] border border-dashed border-border bg-background p-8 text-[15px] leading-relaxed text-muted-foreground">
+    <p className="rounded-[10px] border border-dashed border-border bg-card p-8 text-[15px] leading-relaxed text-muted-foreground">
       Classement à venir, dès que la poule de cette catégorie sera communiquée par la ligue.
     </p>
   );
@@ -57,7 +57,7 @@ function Resultats() {
 
       <section className="section-y bg-background">
         <div className="container-vbc">
-          <SectionHeading eyebrow="Senior F1" title="[Championnat à renseigner]" />
+          <SectionHeading eyebrow="Senior F1" title="[Championnat à renseigner]" tone="light" />
           <div className="mt-10 grid gap-8 lg:grid-cols-[7fr_3fr]">
             <ClassementAVenir />
             <RecentResultsPending />

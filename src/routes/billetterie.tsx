@@ -202,8 +202,8 @@ function Billetterie() {
       <section className="section-y bg-background">
         <div className="container-vbc grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <Reveal>
-            <SectionHeading eyebrow="Infos pratiques" title={`Se rendre à ${club.venue}`} />
-            <ul className="mt-8 space-y-4 text-[15px]">
+            <SectionHeading eyebrow="Infos pratiques" title={`Se rendre à ${club.venue}`} tone="light" />
+            <ul className="mt-8 space-y-4 text-[15px] text-navy-foreground">
               <li className="flex gap-3">
                 <MapPin size={18} className="mt-1 shrink-0 text-primary" aria-hidden />
                 <span>{club.address}</span>

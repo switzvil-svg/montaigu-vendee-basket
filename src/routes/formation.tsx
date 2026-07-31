@@ -64,7 +64,7 @@ function Formation() {
                   "min-h-11 rounded-[10px] border px-5 text-[15px] font-medium transition-colors duration-[250ms]",
                   category === c
                     ? "border-navy bg-navy text-navy-foreground"
-                    : "border-border bg-background text-navy hover:border-navy",
+                    : "border-border bg-card text-navy hover:border-navy",
                 )}
               >
                 {c}
@@ -81,7 +81,7 @@ function Formation() {
                 id="poste"
                 value={position}
                 onChange={(e) => setPosition(e.target.value)}
-                className="h-11 w-full rounded-[10px] border border-border bg-background px-4 text-[15px] sm:w-56"
+                className="h-11 w-full rounded-[10px] border border-border bg-card px-4 text-[15px] sm:w-56"
               >
                 {["Tous", ...positions].map((p) => (
                   <option key={p}>{p}</option>
@@ -98,7 +98,7 @@ function Formation() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Rechercher un joueur"
-                className="h-11 w-full rounded-[10px] border border-border bg-background px-4 text-[15px] placeholder:text-muted-foreground"
+                className="h-11 w-full rounded-[10px] border border-border bg-card px-4 text-[15px] placeholder:text-muted-foreground"
               />
             </div>
           </div>

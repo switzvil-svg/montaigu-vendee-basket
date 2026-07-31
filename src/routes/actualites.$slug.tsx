@@ -84,7 +84,7 @@ function ArticlePage() {
         </div>
       </header>
 
-      <article className="section-y bg-background">
+      <article className="section-y bg-card">
         <div className="container-vbc max-w-3xl">
           <p className="text-xl leading-relaxed text-navy">{article.excerpt}</p>
           {article.content.map((p) => (

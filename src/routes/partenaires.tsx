@@ -48,6 +48,7 @@ function Partenaires() {
             eyebrow="Notre philosophie"
             title="Un partenariat de proximité"
             intro="Nous construisons des relations durables plutôt que des visibilités ponctuelles : chaque euro engagé finance directement l'encadrement diplômé et la formation des jeunes du club."
+            tone="light"
           />
         </div>
       </section>
@@ -82,7 +83,7 @@ function Partenaires() {
             />
           </div>
           <form
-            className="rounded-[10px] bg-background p-8 lg:p-10"
+            className="rounded-[10px] bg-card p-8 lg:p-10"
             onSubmit={(e) => {
               e.preventDefault();
               setSent(true);

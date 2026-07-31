@@ -35,7 +35,7 @@ export function NewsletterForm({
           "h-11 min-w-0 flex-1 rounded-[10px] border px-4 text-[15px] outline-none",
           tone === "light"
             ? "border-navy-foreground/25 bg-transparent text-navy-foreground placeholder:text-navy-foreground/40"
-            : "border-border bg-background text-foreground placeholder:text-muted-foreground",
+            : "border-border bg-card text-foreground placeholder:text-muted-foreground",
         )}
       />
       <CtaButton type="submit">S'inscrire</CtaButton>

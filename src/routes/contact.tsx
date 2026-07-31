@@ -42,7 +42,7 @@ function Contact() {
         imageAlt={`${club.venue}, ${club.city}`}
       />
 
-      <section className="section-y bg-background">
+      <section className="section-y bg-card">
         <div className="container-vbc grid gap-16 lg:grid-cols-2 lg:gap-24">
           <form
             onSubmit={(e) => {

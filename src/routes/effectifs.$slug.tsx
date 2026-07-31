@@ -196,7 +196,7 @@ function PlayerProfile() {
         </div>
       </header>
 
-      <section className="section-y bg-background">
+      <section className="section-y bg-card">
         <div className="container-vbc grid min-w-0 gap-16 lg:grid-cols-[1fr_360px]">
           <div className="min-w-0">
             {hasDetails ? (

@@ -10,7 +10,7 @@ export const ctaVariants = cva(
       variant: {
         primary: "bg-primary text-primary-foreground hover:bg-primary-hover",
         secondary:
-          "border border-navy bg-background text-navy hover:bg-navy hover:text-navy-foreground",
+          "border border-navy bg-card text-navy hover:bg-navy hover:text-navy-foreground",
         ghost: "px-0 text-navy hover:text-primary link-underline",
         onDark:
           "border border-navy-foreground/40 text-navy-foreground hover:bg-navy-foreground hover:text-navy",

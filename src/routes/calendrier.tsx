@@ -113,7 +113,7 @@ function Calendrier() {
         </div>
       </section>
 
-      <section className="section-y bg-background pt-0">
+      <section className="section-y bg-card pt-0">
         <div className="container-vbc">
           <div className="flex flex-col gap-4 sm:flex-row">
             <div>
@@ -124,7 +124,7 @@ function Calendrier() {
                 id="equipe"
                 value={team}
                 onChange={(e) => setTeam(e.target.value)}
-                className="h-11 w-full rounded-[10px] border border-border bg-background px-4 text-[15px] sm:w-52"
+                className="h-11 w-full rounded-[10px] border border-border bg-card px-4 text-[15px] sm:w-52"
               >
                 {["Toutes", "Senior M1", "Senior F1"].map((t) => (
                   <option key={t}>{t}</option>
@@ -139,7 +139,7 @@ function Calendrier() {
                 id="competition"
                 value={competition}
                 onChange={(e) => setCompetition(e.target.value)}
-                className="h-11 w-full rounded-[10px] border border-border bg-background px-4 text-[15px] sm:w-72"
+                className="h-11 w-full rounded-[10px] border border-border bg-card px-4 text-[15px] sm:w-72"
               >
                 {competitions.map((c) => (
                   <option key={c}>{c}</option>
