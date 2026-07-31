@@ -10,10 +10,10 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "cf:preview": "wrangler dev --config .output/server/wrangler.json --experimental-json-config",
-    "cf:deploy": "bun run build && wrangler deploy --config .output/server/wrangler.json --experimental-json-config",
-    "cf:deploy:prebuilt": "wrangler deploy --config .output/server/wrangler.json --experimental-json-config",
-    "cf:tail": "wrangler tail --config .output/server/wrangler.json --experimental-json-config"
+    "cf:preview": "wrangler dev --config .output/server/wrangler.json",
+    "cf:deploy": "bun run build && wrangler deploy --config .output/server/wrangler.json",
+    "cf:deploy:prebuilt": "wrangler deploy --config .output/server/wrangler.json",
+    "cf:tail": "wrangler tail --config .output/server/wrangler.json"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

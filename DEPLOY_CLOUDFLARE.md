@@ -98,7 +98,7 @@ Puis rebuild : le Worker sera publié sur
 Si un jour tu ajoutes des clés API :
 
 ```bash
-wrangler secret put NOM_DU_SECRET --config .output/server/wrangler.json --experimental-json-config
+wrangler secret put NOM_DU_SECRET --config .output/server/wrangler.json
 ```
 
 Elles seront accessibles côté serveur via `process.env.NOM_DU_SECRET`
