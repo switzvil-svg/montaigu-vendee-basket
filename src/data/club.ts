@@ -1,0 +1,343 @@
+/**
+ * Single source of editorial + sporting data for the club site.
+ * Kept in one typed module so pages stay presentational and Cloud/Supabase can
+ * later replace these arrays without touching components.
+ *
+ * TEMPLATE : ce fichier est volontairement vide de tout contenu inventé.
+ * Voir TEMPLATE.md à la racine du repo pour la checklist complète. Ne jamais
+ * fabriquer un nom, un score ou une stat pour une vraie personne/équipe —
+ * laisser un tableau vide ou un commentaire TODO tant que l'info n'est pas
+ * fournie par le club.
+ */
+import photoPlaceholder from "@/assets/photo-placeholder.jpg";
+
+export const images = {
+  heroPlayer: photoPlaceholder,
+  clubStory: photoPlaceholder,
+  salle: photoPlaceholder,
+  supporters: photoPlaceholder,
+  teamM1: photoPlaceholder,
+  teamF1: photoPlaceholder,
+  teamJeunes: photoPlaceholder,
+  teamEcole: photoPlaceholder,
+  teamLoisir: photoPlaceholder,
+};
+
+/**
+ * Identité du club — LE fichier à modifier pour adapter ce site à un autre
+ * club (nom, ville, salle, coordonnées, région). Utilisé par __root.tsx
+ * (meta, JSON-LD) et par tous les composants/pages au lieu de texte en dur.
+ */
+export const club = {
+  name: "Montaigu Vendée Basket",
+  short: "MVB",
+  city: "Montaigu-Vendée",
+  // TODO : nom réel de la salle du club.
+  venue: "[Salle à renseigner]",
+  // TODO : adresse réelle (rue + numéro).
+  streetAddress: "[Adresse à renseigner]",
+  // TODO : code postal réel.
+  postalCode: "85600",
+  region: "Pays de la Loire",
+  department: "Vendée",
+  country: "FR",
+  // TODO : adresse complète réelle, utilisée sur la page Contact/Billetterie.
+  address: "[Adresse complète à renseigner], 85600 Montaigu-Vendée",
+  // TODO : email de contact réel du club.
+  email: "contact@exemple.fr",
+  // TODO : téléphone réel du club.
+  phone: "[Téléphone à renseigner]",
+  // TODO: remplacer par l'URL du site de billetterie externe du club (si applicable).
+  ticketingUrl: "https://www.exemple.fr/billetterie",
+};
+
+/* ------------------------------------------------------------------ matches */
+
+export type Match = {
+  id: string;
+  team: "Senior M1" | "Senior F1";
+  competition: string;
+  round: string;
+  opponent: string;
+  opponentShort: string;
+  opponentLogo?: string;
+  home: boolean;
+  venue: string;
+  date: string; // ISO
+  score?: { vbc: number; opponent: number };
+};
+
+/**
+ * TODO : remplacer cette entrée d'exemple par le vrai calendrier du club
+ * (un objet par match, aller-retour). Ne jamais inventer un adversaire, une
+ * date ou un score réel — cette entrée est un simple exemple de forme.
+ */
+export const seniorM1Matches: Match[] = [
+  {
+    id: "m1-01",
+    team: "Senior M1",
+    competition: "[Championnat à renseigner]",
+    round: "Aller",
+    opponent: "Adversaire à définir",
+    opponentShort: "TBD",
+    home: true,
+    venue: club.venue,
+    date: "2026-09-05T20:00:00",
+  },
+];
+
+export const nextMatch: Match =
+  seniorM1Matches.find((m) => m.home && new Date(m.date) > new Date()) ?? seniorM1Matches[0];
+
+export const upcomingMatches: Match[] = [...seniorM1Matches];
+
+export type StandingRow = {
+  rank: number;
+  team: string;
+  points: number;
+  played: number;
+  wins: number;
+  losses: number;
+  scored: number;
+  conceded: number;
+  diff: number;
+  logo?: string;
+};
+
+/** TODO : classement réel de la saison en cours (aucune ligne inventée). */
+export const standings: StandingRow[] = [];
+
+/* ------------------------------------------------------------------- roster */
+
+export type Position =
+  | "Meneur"
+  | "Arrière"
+  | "Ailier"
+  | "Ailier fort"
+  | "Ailier / Ailier fort"
+  | "Ailier fort / Pivot"
+  | "Pivot"
+  | "Coach";
+
+export type Player = {
+  slug: string;
+  firstName: string;
+  lastName: string;
+  team: string;
+  photo: string;
+  /** Photo détourée (fond transparent) pour la carte effectif ; retombe sur
+   *  `photo` si absente. */
+  cardPhoto?: string;
+  /** Vidéo d'action (fichier local importé, ex. .mp4) affichée sur la fiche joueur. */
+  video?: string;
+  /** Crédit du photographe/vidéaste (compte Instagram) pour `photo`/`video`, si connu. */
+  credit?: { handle: string; url: string };
+  /** Photos supplémentaires affichées dans la colonne latérale de la fiche joueur. */
+  gallery?: string[];
+  /** Champs optionnels : laissés vides tant que le club ne les a pas fournis
+   *  (pas de numéro/poste/stats inventés pour de vraies personnes). */
+  number?: number;
+  position?: Position;
+  height?: string;
+  age?: number;
+  caption?: string;
+  quote?: string;
+  bio?: string[];
+  career?: { season: string; club: string; matchs?: number; points?: number; moyenne?: number }[];
+  stats?: { points?: number; rebonds?: number; passes?: number; adresse?: string };
+  /** Historique match par match d'une saison (source : mr-stats ou équivalent). */
+  matchLog?: { matchday: number; opponent: string; home: boolean; score: string; points: number }[];
+  role?: string;
+};
+
+/**
+ * TODO : effectif réel du club. Chaque joueur ajouté doit utiliser une vraie
+ * photo (sinon laisser `photo: playerPlaceholder`) et de vraies infos — ne
+ * jamais inventer un numéro, un poste ou des stats pour une vraie personne ;
+ * écrire "En attente d'informations" plutôt que de fabriquer une donnée
+ * (voir `officials`/`staff` plus bas pour l'exemple de ce pattern).
+ */
+export const players: Player[] = [];
+
+/* ------------------------------------------------------------------ results */
+
+export type ResultRow = { matchday: number; opponent: string; home: boolean; score: string };
+
+/**
+ * Résultats des matchs déjà joués, dérivés du match log d'un joueur dont le
+ * suivi est complet sur la saison (voir TEMPLATE.md). Se vide automatiquement
+ * tant qu'aucun joueur n'a de `matchLog` renseigné.
+ */
+export const seniorM1Results: ResultRow[] = (() => {
+  const reference = players.find((p) => p.matchLog?.length);
+  return [...(reference?.matchLog ?? [])]
+    .map(({ matchday, opponent, home, score }) => ({ matchday, opponent, home, score }))
+    .sort((a, b) => b.matchday - a.matchday);
+})();
+
+/** Équipe première : les deux groupes seniors compétition. */
+export const premiereCategories = ["Senior M1", "Senior F1"] as const;
+
+/** Formation : le parcours jeunes, de l'École de Basket aux U20. */
+export const formationCategories = ["U20", "U18", "U15", "École de Basket"] as const;
+
+export const positions: Position[] = ["Meneur", "Arrière", "Ailier", "Ailier fort", "Pivot"];
+
+/**
+ * "Vos leaders" : calculé automatiquement à partir des stats déjà
+ * renseignées dans `players`, jamais éditorialisé à la main. Se vide tant
+ * qu'aucun joueur n'a de stats/matchLog.
+ */
+export type LeaderSpot = {
+  category: string;
+  sublabel: string;
+  player: Player;
+  value: string;
+  featured?: boolean;
+};
+
+function topScorerAmong(teams: readonly string[]) {
+  return players
+    .filter((p): p is Player & { stats: { points: number } } => p.stats?.points != null)
+    .filter((p) => teams.includes(p.team))
+    .sort((a, b) => b.stats.points - a.stats.points)[0];
+}
+
+/** MVP mis en avant sur son dernier match logué, tous joueurs confondus. */
+function lastMatchSpot(): LeaderSpot | null {
+  const candidates = players
+    .filter((p): p is Player & { matchLog: NonNullable<Player["matchLog"]> } =>
+      Boolean(p.matchLog?.length),
+    )
+    .map((p) => ({ player: p, last: p.matchLog[p.matchLog.length - 1] }));
+  if (!candidates.length) return null;
+  const { player, last } = candidates.sort((a, b) => b.last.points - a.last.points)[0];
+  return {
+    category: "MVP",
+    sublabel: `Dernier match — J${last.matchday} vs ${last.opponent}`,
+    player,
+    value: String(last.points),
+    featured: true,
+  };
+}
+
+export const leaderSpots: LeaderSpot[] = [
+  lastMatchSpot(),
+  (() => {
+    const player = topScorerAmong(["Senior M1"]);
+    return player
+      ? {
+          category: "Meilleur scoreur",
+          sublabel: "de la saison",
+          player,
+          value: String(player.stats!.points),
+        }
+      : null;
+  })(),
+  (() => {
+    const player = topScorerAmong(["Senior F1"]);
+    return player
+      ? {
+          category: "Meilleure scoreuse",
+          sublabel: "de la saison",
+          player,
+          value: String(player.stats!.points),
+        }
+      : null;
+  })(),
+  (() => {
+    const player = topScorerAmong(formationCategories);
+    return player
+      ? {
+          category: "Meilleur jeune",
+          sublabel: "de la saison",
+          player,
+          value: String(player.stats!.points),
+        }
+      : null;
+  })(),
+].filter((s): s is LeaderSpot => s !== null);
+
+/* --------------------------------------------------------------------- news */
+
+export type Article = {
+  slug: string;
+  title: string;
+  category: "Club" | "Matchs" | "Jeunes" | "Événements" | "Partenaires";
+  date: string;
+  author: string;
+  readingTime: string;
+  excerpt: string;
+  image: string;
+  featured?: boolean;
+  content: string[];
+};
+
+/** TODO : vraies actualités du club (aucun article inventé). */
+export const articles: Article[] = [];
+
+export const newsCategories = [
+  "Toutes",
+  "Club",
+  "Matchs",
+  "Jeunes",
+  "Événements",
+  "Partenaires",
+] as const;
+
+/* -------------------------------------------------------------------- teams */
+
+/**
+ * TODO : adapter les intitulés/niveaux réels des équipes du club (garder au
+ * moins une entrée pour que le carrousel "Nos équipes" de l'accueil ne soit
+ * pas vide, mais ne pas laisser de faux niveau de championnat en prod).
+ */
+export const teams = [
+  {
+    name: "Senior M1",
+    level: "[Championnat à renseigner]",
+    image: images.teamM1,
+    text: "[À rédiger] Présentation de l'équipe fanion masculine.",
+  },
+  {
+    name: "Senior F1",
+    level: "[Championnat à renseigner]",
+    image: images.teamF1,
+    text: "[À rédiger] Présentation de l'équipe fanion féminine.",
+  },
+];
+
+/* ----------------------------------------------------------------- partners */
+
+export type Partner = {
+  name: string;
+  tier: "Or" | "Argent" | "Bronze";
+  sector: string;
+  logo?: string;
+};
+
+/** TODO : vrais sponsors du club, avec leur logo réel (voir TEMPLATE.md). */
+export const partners: Partner[] = [];
+
+/** TODO : vraies institutions partenaires (mairie, comité, ligue, FFBB…). */
+export const institutions: string[] = [];
+
+/* ------------------------------------------------------------------ club life */
+
+/** TODO : vraie chronologie du club (aucune date/fait inventé). */
+export const timeline: { year: string; title: string; text: string }[] = [];
+
+export const values = [
+  { title: "Formation", text: "[À rédiger]" },
+  { title: "Famille", text: "[À rédiger]" },
+  { title: "Ambition", text: "[À rédiger]" },
+  { title: "Respect", text: "[À rédiger]" },
+];
+
+/** TODO : vrai bureau du club. Pour un poste sans nom confirmé, utiliser
+ *  "En attente d'informations" plutôt que d'inventer un nom (voir
+ *  TEMPLATE.md). */
+export const officials: { name: string; role: string }[] = [];
+
+/** TODO : vrai encadrement/staff du club (même règle que `officials`). */
+export const staff: { name: string; role: string }[] = [];
