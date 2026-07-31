@@ -11,15 +11,25 @@
  */
 import photoPlaceholder from "@/assets/photo-placeholder.jpg";
 import flavienForre from "@/assets/players/flavien-forre.jpg";
+import flavienForreCutout from "@/assets/players/flavien-forre-cutout.webp";
 import issaFofana from "@/assets/players/issa-fofana.jpg";
+import issaFofanaCutout from "@/assets/players/issa-fofana-cutout.webp";
 import jonasMarieFrancoise from "@/assets/players/jonas-marie-francoise.jpg";
+import jonasMarieFrancoiseCutout from "@/assets/players/jonas-marie-francoise-cutout.webp";
 import julienLeclerc from "@/assets/players/julien-leclerc.jpg";
+import julienLeclercCutout from "@/assets/players/julien-leclerc-cutout.webp";
 import juniorTshunza from "@/assets/players/junior-tshunza.jpg";
+import juniorTshunzaCutout from "@/assets/players/junior-tshunza-cutout.webp";
 import justinJouet from "@/assets/players/justin-jouet.jpg";
+import justinJouetCutout from "@/assets/players/justin-jouet-cutout.webp";
 import robinLeSter from "@/assets/players/robin-le-ster.jpg";
+import robinLeSterCutout from "@/assets/players/robin-le-ster-cutout.webp";
 import romainBrachet from "@/assets/players/romain-brachet.jpg";
+import romainBrachetCutout from "@/assets/players/romain-brachet-cutout.webp";
 import theoPallard from "@/assets/players/theo-pallard.jpg";
+import theoPallardCutout from "@/assets/players/theo-pallard-cutout.webp";
 import valentinJolbit from "@/assets/players/valentin-jolbit.jpg";
+import valentinJolbitCutout from "@/assets/players/valentin-jolbit-cutout.webp";
 
 export const images = {
   heroPlayer: photoPlaceholder,
@@ -186,23 +196,86 @@ export type Player = {
  * (voir `officials`/`staff` plus bas pour l'exemple de ce pattern).
  */
 export const players: Player[] = [
-  { slug: "justin-jouet", firstName: "Justin", lastName: "Jouet", photo: justinJouet, number: 4 },
+  {
+    slug: "justin-jouet",
+    firstName: "Justin",
+    lastName: "Jouet",
+    photo: justinJouet,
+    cardPhoto: justinJouetCutout,
+    number: 4,
+  },
   {
     slug: "jonas-marie-francoise",
     firstName: "Jonas",
     lastName: "Marie-Francoise",
     photo: jonasMarieFrancoise,
+    cardPhoto: jonasMarieFrancoiseCutout,
     number: 6,
   },
-  { slug: "julien-leclerc", firstName: "Julien", lastName: "Leclerc", photo: julienLeclerc, number: 7 },
-  { slug: "theo-pallard", firstName: "Théo", lastName: "Pallard", photo: theoPallard, number: 8 },
-  { slug: "flavien-forre", firstName: "Flavien", lastName: "Forre", photo: flavienForre, number: 9 },
-  { slug: "romain-brachet", firstName: "Romain", lastName: "Brachet", photo: romainBrachet, number: 10 },
-  { slug: "robin-le-ster", firstName: "Robin", lastName: "Le Ster", photo: robinLeSter, number: 12 },
-  { slug: "junior-tshunza", firstName: "Junior", lastName: "Tshunza", photo: juniorTshunza, number: 14 },
-  { slug: "valentin-jolbit", firstName: "Valentin", lastName: "Jolbit", photo: valentinJolbit, number: 11 },
+  {
+    slug: "julien-leclerc",
+    firstName: "Julien",
+    lastName: "Leclerc",
+    photo: julienLeclerc,
+    cardPhoto: julienLeclercCutout,
+    number: 7,
+  },
+  {
+    slug: "theo-pallard",
+    firstName: "Théo",
+    lastName: "Pallard",
+    photo: theoPallard,
+    cardPhoto: theoPallardCutout,
+    number: 8,
+  },
+  {
+    slug: "flavien-forre",
+    firstName: "Flavien",
+    lastName: "Forre",
+    photo: flavienForre,
+    cardPhoto: flavienForreCutout,
+    number: 9,
+  },
+  {
+    slug: "romain-brachet",
+    firstName: "Romain",
+    lastName: "Brachet",
+    photo: romainBrachet,
+    cardPhoto: romainBrachetCutout,
+    number: 10,
+  },
+  {
+    slug: "robin-le-ster",
+    firstName: "Robin",
+    lastName: "Le Ster",
+    photo: robinLeSter,
+    cardPhoto: robinLeSterCutout,
+    number: 12,
+  },
+  {
+    slug: "junior-tshunza",
+    firstName: "Junior",
+    lastName: "Tshunza",
+    photo: juniorTshunza,
+    cardPhoto: juniorTshunzaCutout,
+    number: 14,
+  },
+  {
+    slug: "valentin-jolbit",
+    firstName: "Valentin",
+    lastName: "Jolbit",
+    photo: valentinJolbit,
+    cardPhoto: valentinJolbitCutout,
+    number: 11,
+  },
   // Photo provisoire (maillot d'un autre club visible) en attendant une photo MVBC.
-  { slug: "issa-fofana", firstName: "Issa", lastName: "Fofana", photo: issaFofana },
+  {
+    slug: "issa-fofana",
+    firstName: "Issa",
+    lastName: "Fofana",
+    photo: issaFofana,
+    cardPhoto: issaFofanaCutout,
+  },
 ].map((p) => ({ ...p, team: "Senior M1" }));
 
 /* ------------------------------------------------------------------ results */
