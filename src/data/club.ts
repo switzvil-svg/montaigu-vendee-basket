@@ -456,7 +456,13 @@ export const values = [
 /** TODO : vrai bureau du club. Pour un poste sans nom confirmé, utiliser
  *  "En attente d'informations" plutôt que d'inventer un nom (voir
  *  TEMPLATE.md). */
-export const officials: { name: string; role: string }[] = [];
+export const officials: { name: string; role: string }[] = [
+  { name: "Antoine Allemand", role: "Président de l'association" },
+  { name: "Jérôme Lecomte", role: "Vice-président" },
+  { name: "Camille Godard", role: "Vice-présidente" },
+  { name: "Hyacinthe Chassagne", role: "Secrétaire" },
+  { name: "Rebecca Douillard", role: "Secrétaire" },
+];
 
 /** TODO : vrai encadrement/staff du club (même règle que `officials`). */
 export const staff: { name: string; role: string }[] = [];

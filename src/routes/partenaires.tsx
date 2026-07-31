@@ -53,10 +53,14 @@ function Partenaires() {
         </div>
       </section>
 
-      {tiers.map((tier) => (
-        <section key={tier} className="section-y bg-surface odd:bg-background">
+      {tiers.map((tier, i) => (
+        <section key={tier} className={i % 2 === 0 ? "section-y bg-surface" : "section-y bg-background"}>
           <div className="container-vbc">
-            <SectionHeading eyebrow={`Partenaire ${tier}`} title={`Nos partenaires ${tier}`} />
+            <SectionHeading
+              eyebrow={`Partenaire ${tier}`}
+              title={`Nos partenaires ${tier}`}
+              tone={i % 2 === 0 ? "dark" : "light"}
+            />
             <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {partners
                 .filter((p) => p.tier === tier)
