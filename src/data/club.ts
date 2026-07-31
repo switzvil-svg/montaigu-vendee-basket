@@ -30,13 +30,14 @@ import theoPallard from "@/assets/players/theo-pallard.jpg";
 import theoPallardCutout from "@/assets/players/theo-pallard-cutout.webp";
 import valentinJolbit from "@/assets/players/valentin-jolbit.jpg";
 import valentinJolbitCutout from "@/assets/players/valentin-jolbit-cutout.webp";
+import teamM1Photo from "@/assets/team-m1.jpg";
 
 export const images = {
   heroPlayer: photoPlaceholder,
   clubStory: photoPlaceholder,
   salle: photoPlaceholder,
   supporters: photoPlaceholder,
-  teamM1: photoPlaceholder,
+  teamM1: teamM1Photo,
   teamF1: photoPlaceholder,
   teamJeunes: photoPlaceholder,
   teamEcole: photoPlaceholder,
@@ -269,12 +270,14 @@ export const players: Player[] = [
     number: 11,
   },
   // Photo provisoire (maillot d'un autre club visible) en attendant une photo MVBC.
+  // Numéro 15 confirmé par la photo d'équipe complète.
   {
     slug: "issa-fofana",
     firstName: "Issa",
     lastName: "Fofana",
     photo: issaFofana,
     cardPhoto: issaFofanaCutout,
+    number: 15,
   },
 ].map((p) => ({ ...p, team: "Senior M1" }));
 
