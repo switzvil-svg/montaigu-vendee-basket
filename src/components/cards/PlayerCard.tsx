@@ -55,31 +55,31 @@ export function PlayerCard({ player }: { player: Player }) {
         transition={{ type: "spring", stiffness: 280, damping: 20 }}
         className="relative h-80 shadow-[var(--shadow-card)] transition-shadow duration-300 group-hover:shadow-[0_24px_60px_-12px_oklch(0.24_0.085_151.6_/_0.5)]"
       >
-        <div className="absolute inset-0 overflow-hidden rounded-[14px] bg-navy">
+        <div className="absolute inset-0 overflow-hidden rounded-[14px] bg-white">
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/25"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/10"
           />
 
           <div
             aria-hidden
-            className="pointer-events-none absolute -top-16 -right-14 h-56 w-56 rounded-full bg-primary/25 blur-[70px] transition-all duration-500 ease-out group-hover:bg-primary/45"
+            className="pointer-events-none absolute -top-16 -right-14 h-56 w-56 rounded-full bg-black/10 blur-[70px] transition-all duration-500 ease-out group-hover:bg-black/20"
           />
 
           <div
             aria-hidden
-            className="pointer-events-none absolute top-[38%] right-[8%] h-44 w-44 -translate-y-1/2 rounded-full border border-navy-foreground/[0.08] transition-all duration-500 ease-out group-hover:scale-110 group-hover:border-primary/40"
+            className="pointer-events-none absolute top-[38%] right-[8%] h-44 w-44 -translate-y-1/2 rounded-full border border-black/[0.08] transition-all duration-500 ease-out group-hover:scale-110 group-hover:border-black/30"
           />
 
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:radial-gradient(circle,white_1px,transparent_1px)] [background-size:16px_16px]"
+            className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:radial-gradient(circle,black_1px,transparent_1px)] [background-size:16px_16px]"
           />
 
           {player.number != null ? (
             <span
               aria-hidden
-              className="pointer-events-none absolute -top-8 -right-3 font-display text-[9rem] leading-none text-navy-foreground/[0.07] uppercase select-none"
+              className="pointer-events-none absolute -top-8 -right-3 font-display text-[9rem] leading-none text-black/[0.07] uppercase select-none"
             >
               {player.number}
             </span>
@@ -87,12 +87,12 @@ export function PlayerCard({ player }: { player: Player }) {
 
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 -translate-x-[120%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/12 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[120%]"
+            className="pointer-events-none absolute inset-0 -translate-x-[120%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-black/8 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[120%]"
           />
 
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-navy via-navy/70 to-transparent"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-white via-white/70 to-transparent"
           />
 
           <div className="relative flex h-full max-w-[58%] flex-col justify-end gap-1 p-5">
@@ -101,15 +101,15 @@ export function PlayerCard({ player }: { player: Player }) {
             ) : isCoach ? (
               <span className="font-display text-3xl text-primary uppercase">Coach</span>
             ) : null}
-            <h3 className="font-display text-2xl leading-[0.95] text-navy-foreground uppercase">
+            <h3 className="font-display text-2xl leading-[0.95] text-black uppercase">
               {player.firstName} {player.lastName}
             </h3>
             {player.position && !isCoach ? (
-              <p className="text-[11px] font-semibold tracking-[0.16em] text-navy-foreground/60 uppercase">
+              <p className="text-[11px] font-semibold tracking-[0.16em] text-black/60 uppercase">
                 {player.position}
               </p>
             ) : null}
-            <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-navy-foreground/70 transition-colors group-hover:text-primary">
+            <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-black/70 transition-colors group-hover:text-primary">
               Voir le profil
               <ArrowRight
                 size={13}
