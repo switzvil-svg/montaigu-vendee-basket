@@ -10,34 +10,13 @@
  * fournie par le club.
  */
 import photoPlaceholder from "@/assets/photo-placeholder.jpg";
-import flavienForre from "@/assets/players/flavien-forre.jpg";
-import flavienForreCutout from "@/assets/players/flavien-forre-cutout.webp";
-import issaFofana from "@/assets/players/issa-fofana.jpg";
-import issaFofanaCutout from "@/assets/players/issa-fofana-cutout.webp";
-import jonasMarieFrancoise from "@/assets/players/jonas-marie-francoise.jpg";
-import jonasMarieFrancoiseCutout from "@/assets/players/jonas-marie-francoise-cutout.webp";
-import julienLeclerc from "@/assets/players/julien-leclerc.jpg";
-import julienLeclercCutout from "@/assets/players/julien-leclerc-cutout.webp";
-import juniorTshunza from "@/assets/players/junior-tshunza.jpg";
-import juniorTshunzaCutout from "@/assets/players/junior-tshunza-cutout.webp";
-import justinJouet from "@/assets/players/justin-jouet.jpg";
-import justinJouetCutout from "@/assets/players/justin-jouet-cutout.webp";
-import robinLeSter from "@/assets/players/robin-le-ster.jpg";
-import robinLeSterCutout from "@/assets/players/robin-le-ster-cutout.webp";
-import romainBrachet from "@/assets/players/romain-brachet.jpg";
-import romainBrachetCutout from "@/assets/players/romain-brachet-cutout.webp";
-import theoPallard from "@/assets/players/theo-pallard.jpg";
-import theoPallardCutout from "@/assets/players/theo-pallard-cutout.webp";
-import valentinJolbit from "@/assets/players/valentin-jolbit.jpg";
-import valentinJolbitCutout from "@/assets/players/valentin-jolbit-cutout.webp";
-import teamM1Photo from "@/assets/team-m1.jpg";
 
 export const images = {
   heroPlayer: photoPlaceholder,
   clubStory: photoPlaceholder,
   salle: photoPlaceholder,
   supporters: photoPlaceholder,
-  teamM1: teamM1Photo,
+  teamM1: photoPlaceholder,
   teamF1: photoPlaceholder,
   teamJeunes: photoPlaceholder,
   teamEcole: photoPlaceholder,
@@ -50,20 +29,20 @@ export const images = {
  * (meta, JSON-LD) et par tous les composants/pages au lieu de texte en dur.
  */
 export const club = {
-  name: "Montaigu Vendée Basket",
-  short: "MVB",
-  city: "Montaigu-Vendée",
+  name: "Beauvais BCO",
+  short: "BCO",
+  city: "Beauvais",
   // TODO : nom réel de la salle du club.
   venue: "[Salle à renseigner]",
   // TODO : adresse réelle (rue + numéro).
   streetAddress: "[Adresse à renseigner]",
   // TODO : code postal réel.
-  postalCode: "85600",
-  region: "Pays de la Loire",
-  department: "Vendée",
+  postalCode: "60000",
+  region: "Hauts-de-France",
+  department: "Oise",
   country: "FR",
   // TODO : adresse complète réelle, utilisée sur la page Contact/Billetterie.
-  address: "[Adresse complète à renseigner], 85600 Montaigu-Vendée",
+  address: "[Adresse complète à renseigner], 60000 Beauvais",
   // TODO : email de contact réel du club.
   email: "contact@exemple.fr",
   // TODO : téléphone réel du club.
@@ -88,42 +67,24 @@ export type Match = {
   score?: { vbc: number; opponent: number };
 };
 
-/** Calendrier réel de la saison 2026-2027, Senior M1 (Nationale Masculine 2). */
+/**
+ * TODO : remplacer cette entrée d'exemple par le vrai calendrier du club
+ * (un objet par match, aller-retour). Ne jamais inventer un adversaire, une
+ * date ou un score réel — cette entrée est un simple exemple de forme.
+ */
 export const seniorM1Matches: Match[] = [
-  { opponent: "Beyssac Beaupuy Marmande -3", opponentShort: "BBM -3", home: true, date: "2026-09-05T20:00:00" },
-  { opponent: "ESMS Basket 40", opponentShort: "ESMS 40", home: false, date: "2026-09-12T20:00:00" },
-  { opponent: "Nantes Basket Hermine (NBH) -3", opponentShort: "NBH -3", home: true, date: "2026-09-19T20:00:00" },
-  { opponent: "Amicale Sportive Niortaise", opponentShort: "AS Niortaise", home: false, date: "2026-09-26T20:00:00" },
-  { opponent: "Pornic Basket St Michel", opponentShort: "Pornic", home: true, date: "2026-10-03T20:00:00" },
-  { opponent: "IE - TOAC Basket - Espoir", opponentShort: "TOAC Espoir", home: false, date: "2026-10-10T20:00:00" },
-  { opponent: "Saint Médard Basket", opponentShort: "St Médard", home: true, date: "2026-10-17T20:00:00" },
-  { opponent: "Avenir Serreslousiens Colombins", opponentShort: "Serreslousiens", home: false, date: "2026-10-31T20:00:00" },
-  { opponent: "Challans Riez Vie", opponentShort: "Challans", home: true, date: "2026-11-07T20:00:00" },
-  { opponent: "Rezé Basket 44 - 2", opponentShort: "Rezé 44-2", home: false, date: "2026-11-14T20:00:00" },
-  { opponent: "Garonne Avenir Basket du Marmand", opponentShort: "Garonne Avenir", home: true, date: "2026-11-28T20:00:00" },
-  { opponent: "Brissac Aubance Basket - 2", opponentShort: "Brissac -2", home: false, date: "2026-12-05T20:00:00" },
-  { opponent: "Adour Dax Landes Basket", opponentShort: "Adour Dax", home: false, date: "2026-12-12T20:00:00" },
-  { opponent: "Beyssac Beaupuy Marmande -3", opponentShort: "BBM -3", home: false, date: "2027-01-02T20:00:00" },
-  { opponent: "ESMS Basket 40", opponentShort: "ESMS 40", home: true, date: "2027-01-09T20:00:00" },
-  { opponent: "Nantes Basket Hermine (NBH) -3", opponentShort: "NBH -3", home: false, date: "2027-01-16T20:00:00" },
-  { opponent: "Amicale Sportive Niortaise", opponentShort: "AS Niortaise", home: true, date: "2027-01-30T20:00:00" },
-  { opponent: "Pornic Basket St Michel", opponentShort: "Pornic", home: false, date: "2027-02-06T20:00:00" },
-  { opponent: "IE - TOAC Basket - Espoir", opponentShort: "TOAC Espoir", home: true, date: "2027-02-13T20:00:00" },
-  { opponent: "Saint Médard Basket", opponentShort: "St Médard", home: false, date: "2027-02-27T20:00:00" },
-  { opponent: "Avenir Serreslousiens Colombins", opponentShort: "Serreslousiens", home: true, date: "2027-03-06T20:00:00" },
-  { opponent: "Challans Riez Vie", opponentShort: "Challans", home: false, date: "2027-03-13T20:00:00" },
-  { opponent: "Rezé Basket 44 - 2", opponentShort: "Rezé 44-2", home: true, date: "2027-03-27T20:00:00" },
-  { opponent: "Garonne Avenir Basket du Marmand", opponentShort: "Garonne Avenir", home: false, date: "2027-04-03T20:00:00" },
-  { opponent: "Brissac Aubance Basket - 2", opponentShort: "Brissac -2", home: true, date: "2027-04-17T20:00:00" },
-  { opponent: "Adour Dax Landes Basket", opponentShort: "Adour Dax", home: true, date: "2027-05-01T20:00:00" },
-].map((m, i) => ({
-  id: `m1-${String(i + 1).padStart(2, "0")}`,
-  team: "Senior M1" as const,
-  competition: "Nationale Masculine 2",
-  round: i < 13 ? "Aller" : "Retour",
-  venue: m.home ? club.venue : "Extérieur",
-  ...m,
-}));
+  {
+    id: "m1-01",
+    team: "Senior M1",
+    competition: "[Championnat à renseigner]",
+    round: "Aller",
+    opponent: "Adversaire à définir",
+    opponentShort: "TBD",
+    home: true,
+    venue: club.venue,
+    date: "2026-09-05T20:00:00",
+  },
+];
 
 export const nextMatch: Match =
   seniorM1Matches.find((m) => m.home && new Date(m.date) > new Date()) ?? seniorM1Matches[0];
@@ -196,90 +157,7 @@ export type Player = {
  * écrire "En attente d'informations" plutôt que de fabriquer une donnée
  * (voir `officials`/`staff` plus bas pour l'exemple de ce pattern).
  */
-export const players: Player[] = [
-  {
-    slug: "justin-jouet",
-    firstName: "Justin",
-    lastName: "Jouet",
-    photo: justinJouet,
-    cardPhoto: justinJouetCutout,
-    number: 4,
-  },
-  {
-    slug: "jonas-marie-francoise",
-    firstName: "Jonas",
-    lastName: "Marie-Francoise",
-    photo: jonasMarieFrancoise,
-    cardPhoto: jonasMarieFrancoiseCutout,
-    number: 6,
-  },
-  {
-    slug: "julien-leclerc",
-    firstName: "Julien",
-    lastName: "Leclerc",
-    photo: julienLeclerc,
-    cardPhoto: julienLeclercCutout,
-    number: 7,
-  },
-  {
-    slug: "theo-pallard",
-    firstName: "Théo",
-    lastName: "Pallard",
-    photo: theoPallard,
-    cardPhoto: theoPallardCutout,
-    number: 8,
-  },
-  {
-    slug: "flavien-forre",
-    firstName: "Flavien",
-    lastName: "Forre",
-    photo: flavienForre,
-    cardPhoto: flavienForreCutout,
-    number: 9,
-  },
-  {
-    slug: "romain-brachet",
-    firstName: "Romain",
-    lastName: "Brachet",
-    photo: romainBrachet,
-    cardPhoto: romainBrachetCutout,
-    number: 10,
-  },
-  {
-    slug: "robin-le-ster",
-    firstName: "Robin",
-    lastName: "Le Ster",
-    photo: robinLeSter,
-    cardPhoto: robinLeSterCutout,
-    number: 12,
-  },
-  {
-    slug: "junior-tshunza",
-    firstName: "Junior",
-    lastName: "Tshunza",
-    photo: juniorTshunza,
-    cardPhoto: juniorTshunzaCutout,
-    number: 14,
-  },
-  {
-    slug: "valentin-jolbit",
-    firstName: "Valentin",
-    lastName: "Jolbit",
-    photo: valentinJolbit,
-    cardPhoto: valentinJolbitCutout,
-    number: 11,
-  },
-  // Photo provisoire (maillot d'un autre club visible) en attendant une photo MVBC.
-  // Numéro 15 confirmé par la photo d'équipe complète.
-  {
-    slug: "issa-fofana",
-    firstName: "Issa",
-    lastName: "Fofana",
-    photo: issaFofana,
-    cardPhoto: issaFofanaCutout,
-    number: 15,
-  },
-].map((p) => ({ ...p, team: "Senior M1" }));
+export const players: Player[] = [];
 
 /* ------------------------------------------------------------------ results */
 
@@ -438,65 +316,8 @@ export type Partner = {
   logo?: string;
 };
 
-/**
- * TODO : niveaux (Or/Argent/Bronze) tous mis par défaut en "Bronze" — à
- * confirmer avec le club, aucune info de niveau visible sur la capture
- * fournie. Logos réels à ajouter quand les fichiers seront fournis (voir
- * TEMPLATE.md). Une quinzaine de partenaires de la capture, illisibles à
- * cette résolution, ont été volontairement omis plutôt que de risquer une
- * erreur sur le nom d'une vraie entreprise.
- */
-export const partners: Partner[] = [
-  { name: "Vendée — Le Département", tier: "Bronze", sector: "Collectivité" },
-  { name: "Montaigu Vendée", tier: "Bronze", sector: "Collectivité" },
-  { name: "Terres de Montaigu", tier: "Bronze", sector: "Collectivité" },
-  { name: "Fondation Sodebo", tier: "Bronze", sector: "Fondation d'entreprise" },
-  { name: "GO! J'imprime Ton Style", tier: "Bronze", sector: "Imprimerie" },
-  { name: "Duret", tier: "Bronze", sector: "Immobilier" },
-  { name: "Super U Pays de Montaigu", tier: "Bronze", sector: "Grande distribution" },
-  { name: "Crédit Mutuel Océan", tier: "Bronze", sector: "Banque" },
-  { name: "Barreau & Fils", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "Maison de la Presse", tier: "Bronze", sector: "Presse" },
-  { name: "MB Menuiserie Bouteau", tier: "Bronze", sector: "Menuiserie" },
-  { name: "Fleurs Ange", tier: "Bronze", sector: "Fleuriste" },
-  { name: "E.Leclerc", tier: "Bronze", sector: "Grande distribution" },
-  { name: "RT3", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "7 Envies de Pain", tier: "Bronze", sector: "Boulangerie" },
-  { name: "Moinard", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "Apollo", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "Eric Mocquet", tier: "Bronze", sector: "Artisan" },
-  { name: "L.L.A. Le Loulay Auto", tier: "Bronze", sector: "Automobile" },
-  { name: "C3P", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "Une Envie de Pizza", tier: "Bronze", sector: "Restauration" },
-  { name: "VST", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "VEB", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "Symbiose Expertise Comptable", tier: "Bronze", sector: "Expertise comptable" },
-  { name: "Star Trucks — Renault Trucks", tier: "Bronze", sector: "Automobile" },
-  { name: "Diagonal", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "RoTok", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "Clara Automobile", tier: "Bronze", sector: "Automobile" },
-  { name: "Biocoop", tier: "Bronze", sector: "Alimentation bio" },
-  { name: "CBH Habitat", tier: "Bronze", sector: "Maître d'œuvre" },
-  { name: "ATP Immobilier", tier: "Bronze", sector: "Immobilier" },
-  { name: "INDCAR", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "Vous Faciliter l'IT", tier: "Bronze", sector: "Informatique" },
-  { name: "Burologic", tier: "Bronze", sector: "Bureautique" },
-  { name: "Maison Eveillard", tier: "Bronze", sector: "Boulangerie-pâtisserie" },
-  { name: "Cyril Éclair", tier: "Bronze", sector: "Boulangerie-pâtisserie" },
-  { name: "Heppner", tier: "Bronze", sector: "Transport-logistique" },
-  { name: "Square", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "Le Conservateur", tier: "Bronze", sector: "Assurance / patrimoine" },
-  { name: "Strapharm", tier: "Bronze", sector: "Pharmacie" },
-  { name: "Nat Evasion", tier: "Bronze", sector: "Voyages" },
-  { name: "Envolis", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "IDM Menuiserie", tier: "Bronze", sector: "Menuiserie" },
-  { name: "Café Le Score", tier: "Bronze", sector: "Bar-tabac" },
-  { name: "Agtim", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "Arrivé", tier: "Bronze", sector: "Peintre-décorateur" },
-  { name: "Briogel", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "Calipage", tier: "Bronze", sector: "Entreprise locale" },
-  { name: "SEV Enseignes", tier: "Bronze", sector: "Enseignes-signalétique" },
-];
+/** TODO : vrais sponsors du club, avec leur logo réel (voir TEMPLATE.md). */
+export const partners: Partner[] = [];
 
 /** TODO : vraies institutions partenaires (mairie, comité, ligue, FFBB…). */
 export const institutions: string[] = [];
@@ -516,13 +337,7 @@ export const values = [
 /** TODO : vrai bureau du club. Pour un poste sans nom confirmé, utiliser
  *  "En attente d'informations" plutôt que d'inventer un nom (voir
  *  TEMPLATE.md). */
-export const officials: { name: string; role: string }[] = [
-  { name: "Antoine Allemand", role: "Président de l'association" },
-  { name: "Jérôme Lecomte", role: "Vice-président" },
-  { name: "Camille Godard", role: "Vice-présidente" },
-  { name: "Hyacinthe Chassagne", role: "Secrétaire" },
-  { name: "Rebecca Douillard", role: "Secrétaire" },
-];
+export const officials: { name: string; role: string }[] = [];
 
 /** TODO : vrai encadrement/staff du club (même règle que `officials`). */
 export const staff: { name: string; role: string }[] = [];

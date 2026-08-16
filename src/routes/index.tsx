@@ -143,17 +143,13 @@ function Index() {
             />
           </Reveal>
           <div>
-            <SectionHeading
-              eyebrow="Le club"
-              title="Un club formateur, une ambition collective."
-              tone="light"
-            />
+            <SectionHeading eyebrow="Le club" title="Un club formateur, une ambition collective." />
             <Reveal delay={0.08}>
-              <p className="mt-6 text-lg leading-relaxed text-navy-foreground/70">
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 [À rédiger] Depuis sa création, le {club.name} fait vivre le basket à {club.city},
                 de l'École de Basket au niveau national.
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-navy-foreground/70">
+              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
                 [À rédiger] Un mot sur la philosophie du club (formation, ambition, vie
                 associative).
               </p>
@@ -178,12 +174,7 @@ function Index() {
       {/* 06 — Partenaires */}
       <section className="section-y bg-background">
         <div className="container-vbc">
-          <SectionHeading
-            eyebrow="Partenaires"
-            title="Ils soutiennent le club"
-            align="center"
-            tone="light"
-          />
+          <SectionHeading eyebrow="Partenaires" title="Ils soutiennent le club" align="center" />
         </div>
         <div className="mt-14">
           <PartnersMarquee />
@@ -229,7 +220,6 @@ function Index() {
             title="Ne manquez aucun match"
             intro="Le programme du week-end et les rendez-vous du club, une fois par mois dans votre boîte mail."
             align="center"
-            tone="light"
           />
           <Reveal delay={0.08} className="mt-10">
             <NewsletterForm className="mx-auto max-w-md" />

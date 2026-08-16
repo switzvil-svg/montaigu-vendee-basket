@@ -41,9 +41,9 @@ function LeClub() {
       <section className="section-y bg-background">
         <div className="container-vbc grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
-            <SectionHeading eyebrow="Histoire" title="À compléter" tone="light" />
+            <SectionHeading eyebrow="Histoire" title="À compléter" />
             <Reveal delay={0.06}>
-              <p className="mt-6 text-lg leading-relaxed text-navy-foreground/70">
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 [À rédiger] L'histoire du {club.name} : ses débuts, son ancrage à {club.city}, ses
                 temps forts sportifs.
               </p>
@@ -167,9 +167,9 @@ function LeClub() {
             />
           </Reveal>
           <div>
-            <SectionHeading eyebrow="Notre salle" title={club.venue} tone="light" />
+            <SectionHeading eyebrow="Notre salle" title={club.venue} />
             <Reveal delay={0.06}>
-              <p className="mt-6 text-lg leading-relaxed text-navy-foreground/70">
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 [À rédiger] Capacité, équipements, ambiance : présentez {club.venue} en quelques
                 phrases.
               </p>

@@ -48,19 +48,14 @@ function Partenaires() {
             eyebrow="Notre philosophie"
             title="Un partenariat de proximité"
             intro="Nous construisons des relations durables plutôt que des visibilités ponctuelles : chaque euro engagé finance directement l'encadrement diplômé et la formation des jeunes du club."
-            tone="light"
           />
         </div>
       </section>
 
-      {tiers.map((tier, i) => (
-        <section key={tier} className={i % 2 === 0 ? "section-y bg-surface" : "section-y bg-background"}>
+      {tiers.map((tier) => (
+        <section key={tier} className="section-y bg-surface odd:bg-background">
           <div className="container-vbc">
-            <SectionHeading
-              eyebrow={`Partenaire ${tier}`}
-              title={`Nos partenaires ${tier}`}
-              tone={i % 2 === 0 ? "dark" : "light"}
-            />
+            <SectionHeading eyebrow={`Partenaire ${tier}`} title={`Nos partenaires ${tier}`} />
             <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {partners
                 .filter((p) => p.tier === tier)
@@ -87,7 +82,7 @@ function Partenaires() {
             />
           </div>
           <form
-            className="rounded-[10px] bg-card p-8 lg:p-10"
+            className="rounded-[10px] bg-background p-8 lg:p-10"
             onSubmit={(e) => {
               e.preventDefault();
               setSent(true);

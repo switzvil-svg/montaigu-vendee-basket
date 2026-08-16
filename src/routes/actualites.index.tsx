@@ -104,7 +104,7 @@ function Actualites() {
                     "min-h-11 rounded-[10px] border px-5 text-[15px] font-medium transition-colors duration-[250ms]",
                     category === c
                       ? "border-navy bg-navy text-navy-foreground"
-                      : "border-border bg-card text-navy hover:border-navy",
+                      : "border-border bg-background text-navy hover:border-navy",
                   )}
                 >
                   {c}
@@ -124,7 +124,7 @@ function Actualites() {
                   setPage(1);
                 }}
                 placeholder="Rechercher"
-                className="h-11 w-full rounded-[10px] border border-border bg-card px-4 text-[15px] placeholder:text-muted-foreground"
+                className="h-11 w-full rounded-[10px] border border-border bg-background px-4 text-[15px] placeholder:text-muted-foreground"
               />
             </div>
           </div>
@@ -150,7 +150,7 @@ function Actualites() {
                     "size-11 rounded-[10px] border text-[15px] font-medium",
                     page === n
                       ? "border-navy bg-navy text-navy-foreground"
-                      : "border-border bg-card text-navy hover:border-navy",
+                      : "border-border text-navy hover:border-navy",
                   )}
                 >
                   {n}
